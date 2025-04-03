@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Responsive</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./images/logo.jpg" alt="Logo">
+            <span>Signature</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#presentation">Présentation et Logotype </a></li>
+            <li><a href="#couleurs">Couleurs</a></li>
+            <li><a href="#typographie">Typographie</a></li>
+            <li><a href="#moodboard">Moodboard</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <section class="accueil">
+        <img src="./images/Concept.PNG" alt="Concept_et_marque">
+    </section>
+
+    <section id="presentation" class="presentation">
+    <h1>Présentation du Logo «SIGNATURE»</h1>
+    <p>Le logo SIGNATURE incarne l’élégance et le savoir-faire d’un chocolat d’exception. Conçu pour refléter
+        le raffinement et la qualité premium, il allie esthétisme et symbolisme pour transmettre une expérience
+        gustative unique.
+        Son design repose sur une typographie sophistiquée, inspirée des signatures manuscrites, évoquant
+        l’authenticité, l’expertise et l’engagement dans la perfection. Une palette de couleurs luxueuses, mêlant
+        des tons profonds de cacao, des touches dorées et des reflets satinés, souligne l’exclusivité et le prestige
+        de la marque.
+        Le cacao évoque des sensations de douceur, de richesse, de plaisir et de luxe. En l’utilisant visuellement
+        sur le logo, la marque peut associer ces sensations à son produit. Cela peut stimuler l'appétit et attirer
+        des consommateurs recherchant une expérience gustative de qualité.
+        Un élément graphique en forme de flèche de progression est subtilement intégré au logo, symbolisant
+        l’ascension vers l’excellence, la montée en intensité des saveurs et le parcours d’un chocolatier
+        passionné. Cette dynamique visuelle illustre l’évolution et l’amélioration constante de la qualité, guidant
+        le consommateur vers une expérience gustative inégalée.
+        Avec son design harmonieux et ses finitions soignées, le logo SIGNATURE devient un véritable sceau de
+        distinction, garantissant un chocolat raffiné, travaillé avec passion et destiné aux amateurs de haute
+        chocolaterie.</p>
+        <img src="./images/accueil.jpg" alt="">
+    </section>
+    <section id="couleurs" class="couleurs">
+        <h1>Couleurs</h1>
+        <img src="./images/couleur.PNG" alt="">
+    </section>
+
+    <section id="typographie" class="typographie">
+        <h1>Typographie</h1>
+        <img src="./images/typographie.PNG" alt="">
+    </section>
+
+    <section id="moodboard" class="moodboard">
+        <h1>Moodboard</h1>
+        <img src="./images/moodboard.PNG" alt="">
+    </section>
+
+    <section>
+        <h1>Remerciement</h1>
+        <img src="./images/remerciement.PNG" alt="">
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <form>
+            <input type="text" placeholder="Nom" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+            const links = document.querySelectorAll(".nav-links a");
+        
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+            });
+        
+            links.forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                    menuToggle.classList.remove("active");
+                });
+            });
+        
+            // Effet de scroll pour changer la navbar
+            window.addEventListener("scroll", () => {
+                const navbar = document.querySelector(".navbar");
+                if (window.scrollY > 50) {
+                    navbar.style.background = "#111";
+                } else {
+                    navbar.style.background = "#222";
+                }
+            });
+        });
+        
+    </script>
+
+</body>
+</html>
